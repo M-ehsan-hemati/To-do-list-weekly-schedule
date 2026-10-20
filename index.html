@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <a href="#to-do-list-page" class="btn">To do list</a>
+        <button id="theme-toggle">Switch Theme</button>
+        <a href="#schedule-page" class="btn">Schedule</a>
+    </header>
+    <main id="main-page">
+        <main id="to-do-list-page">
+            <h1>My tasks</h1>
+            <div class="stat-container">
+                <div class="details">
+                    <h2 id="numbers"></h2>
+                    <div id="progress-bar">
+                        <div id="progress"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="input-container">
+                <input type="text" name="" id="" placeholder="Add a task">
+                <button onenter onclick="addtask()">add</button>
+            </div>
+            <div id="list-container"></div>
+        </main>
+        <main id="schedule-page">
+            <h1>My Schedule</h1>
+            <div class="day-container">
+                <h1>Saturday</h1>
+                <div class="schedule-input-container">
+                    <input type="text" placeholder="add a task" name="sat-task">
+                    <input type="time" name="sat-time">
+                    <input type="text " placeholder="add a description" name="sat-des">
+                    <button class="add-btn" id="sat-add-btn"
+                        onclick="add_obj('sat-task','sat-time','sat-des',sat_array,'#sat-list','sat_save')">add</button>
+                </div>
+                <section class="schedule-list-container" id="sat-list">
+
+                </section>
+                <div class="btn-container">
+                    <button class="clear-btn" onclick="ClearAll(sat_array ,'#sat-list','sat_save')">clear all</button>
+                    <button class="clear-btn" onclick="deleteItem(sat_array ,'#sat-list','sat_save')">Delete</button>
+                </div>
+            </div>
+
+            <div class="day-container">
+                <h1>Sunday</h1>
+                <div class="schedule-input-container">
+                    <input type="text" placeholder="add a task" name="sun-task">
+                    <input type="time" name="sun-time">
+                    <input type="text " placeholder="add a description" name="sun-des">
+                    <button class="add-btn" id="sun-add-btn"
+                        onclick="add_obj('sun-task','sun-time','sun-des',sun_array,'#sun-list' ,'sun_save')">add</button>
+                </div>
+                <section class="schedule-list-container" id="sun-list">
+
+                </section>
+                <div class="btn-container">
+                    <button class="clear-btn" onclick="ClearAll(sun_array,'#sun-list','sun_save')">clear all</button>
+                    <button class="clear-btn" onclick="deleteItem(sun_array,'#sun-list','sun_save')">Delete</button>
+                </div>
+            </div>
+
+            <div class="day-container">
+                <h1>Monday</h1>
+                <div class="schedule-input-container">
+                    <input type="text" placeholder="add a task" name="mon-task">
+                    <input type="time" name="mon-time">
+                    <input type="text " placeholder="add a description" name="mon-des">
+                    <button class="add-btn" id="mon-add-btn"
+                        onclick="add_obj('mon-task','mon-time','mon-des',mon_array,'#mon-list','mon_save')">add</button>
+                </div>
+                <section class="schedule-list-container" id="mon-list">
+                </section>
+                <div class="btn-container">
+                    <button class="clear-btn" onclick="ClearAll(mon_array,'#mon-list','mon_save')">clear all</button>
+                    <button class="clear-btn" onclick="deleteItem(mon_array,'#mon-list','mon_save')">Delete</button>
+                </div>
+            </div>
+
+            <div class="day-container">
+                <h1>Tuesday</h1>
+                <div class="schedule-input-container">
+                    <input type="text" placeholder="add a task" name="tue-task">
+                    <input type="time" name="tue-time">
+                    <input type="text " placeholder="add a description" name="tue-des">
+                    <button class="add-btn" id="tue-add-btn"
+                        onclick="add_obj('tue-task','tue-time','tue-des',tue_array,'#tue-list','tue_save')">add</button>
+                </div>
+                <section class="schedule-list-container" id="tue-list">
+
+                </section>
+                <div class="btn-container">
+                    <button class="clear-btn" onclick="ClearAll(tue_array,'#tue-list','tue_save')">clear all</button>
+                    <button class="clear-btn" onclick="deleteItem(tue_array,'#tue-list','tue_save')">Delete</button>
+                </div>
+            </div>
+
+            <div class="day-container">
+                <h1>Thursday</h1>
+                <div class="schedule-input-container">
+                    <input type="text" placeholder="add a task" name="thu-task">
+                    <input type="time" name="thu-time">
+                    <input type="text " placeholder="add a description" name="thu-des">
+                    <button class="add-btn" id="thu-add-btn"
+                        onclick="add_obj('thu-task','thu-time','thu-des',thur_array,'#thu-list','thu_save')">add</button>
+                </div>
+                <section class="schedule-list-container" id="thu-list">
+
+                </section>
+                <div class="btn-container">
+                    <button class="clear-btn" onclick="ClearAll(thur_array,'#thu-list','thu_save')">clear all</button>
+                    <button class="clear-btn" onclick="deleteItem(thur_array,'#thu-list','thu_save')">Delete</button>
+                </div>
+            </div>
+            <div class="day-container">
+
+                <h1>Wednesday</h1>
+                <div class="schedule-input-container">
+                    <input type="text" placeholder="add a task" name="wed-task">
+                    <input type="time" name="wed-time">
+                    <input type="text " placeholder="add a description" name="wed-des">
+                    <button class="add-btn" id="wed-add-btn"
+                        onclick="add_obj('wed-task','wed-time','wed-des',wed_array,'#wed-list','wed_save')">add</button>
+                </div>
+                <section class="schedule-list-container" id="wed-list">
+
+                </section>
+                <div class="btn-container">
+                    <button class="clear-btn"onclick="ClearAll(wed_array,'#wed-list','wed_save')">clear all</button>
+                    <button class="clear-btn" onclick="deleteItem(wed_array,'#wed-list','wed_save')">Delete</button>
+                </div>
+            </div>
+
+            <div class="day-container">
+                <h1>Friday</h1>
+                <div class="schedule-input-container">
+                    <input type="text" placeholder="add a task" name="fri-task">
+                    <input type="time" name="fri-time">
+                    <input type="text " placeholder="add a description" name="fri-des">
+                    <button class="add-btn" id="fri-add-btn"
+                        onclick="add_obj('fri-task','fri-time','fri-des',fri_array,'#fri-list','fri_save')">add</button>
+                </div>
+                <section class="schedule-list-container" id="fri-list">
+
+                </section>
+                <div class="btn-container">
+                    <button class="clear-btn" onclick="ClearAll(fri_array,'#fri-list','fri_save')">clear all</button>
+                    <button class="clear-btn" onclick="deleteItem(fri_array,'#fri-list','fri_save')">Delete</button>
+                </div>
+            </div>
+        </main>
+    </main>
+
+</body>
+<script src="script.js"></script>
+
+</html>
